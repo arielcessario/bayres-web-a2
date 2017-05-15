@@ -1,0 +1,15 @@
+<div class="autocomplete-main-container" #tpl class="ac-autocomplete">
+    <div *ngIf="visible" class="ac-autocomplete-container">
+        <div *ngFor="let item of response; let i = index"
+             class="ac-autocomplete-row"
+             [ngClass]="{'ac-autocomplete-seleccionado': i == indexSelected - 1}"
+             (click)="select(i)"
+             (mouseover)="over(i+1)"
+             (keydown)="select(i)"
+             (blur)="leave($event)">
+        <span *ngFor="let key of autocompleteToShow; let x = index">
+          {{item[key]}}
+        </span>
+        </div>
+    </div>
+</div>

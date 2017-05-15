@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+carrousel-component {
+  position: relative;
+  //top: $nav-height;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  #carrousel-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: $max-width;
+  }
+  #carrousel-items {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+  }
+
+}

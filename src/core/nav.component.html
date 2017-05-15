@@ -1,0 +1,43 @@
+<div class="nav-container">
+
+    <div id="nav-desktop">
+        <div id="nav-logo" (click)="goTo('principal')">
+            <img src="../../images/logo.png" alt="BayresNoProblem">
+        </div>
+        <div id="nav-controls">
+            <div id="nav-controls-upper">
+                <div id="nav-usuario" (mouseover)="visibility = 'true'" (mouseleave)="visibility='false'" *ngIf="loged">
+                    <span>Hola Gustavo!</span>
+                    <div id="nav-usuario-menu" [@visibility]="visibility">
+                        <span (click)="goTo('usuario')">Mi Cuenta</span>
+                        <span (click)="goTo('misPedidos')">Mis Pedidos</span>
+                        <span (click)="goTo('misDeseos')">Lista de Deseos</span>
+                        <span (click)="logOut()">Salir</span>
+                    </div>
+                </div>
+                <div *ngIf="!loged" (click)="login()">Ingresar o Registrarse</div>
+                <span class="nav-link" (click)="goTo('productos')">Productos</span>
+                <span class="nav-link" (click)="goTo('contacto')">Contacto</span>
+                <div class="nav-sucursales">
+                    <span>Sucursales</span>
+                    <div id="nav-sucursales-details">
+                        <div class="nav-sucursal"></div>
+                        <div class="nav-sucursal"></div>
+                        <div class="nav-sucursal"></div>
+                        <div class="nav-sucursal"></div>
+                    </div>
+                </div>
+                <select name="categorias" id="categorias"></select>
+            </div>
+            <div id="nav-controls-lower">
+                <select name="buscar-en" id="buscar-en"></select>
+                <input type="text">
+            </div>
+        </div>
+        <div id="nav-cart" style="font-size: 32px;">
+            <i class="fa fa-shopping-cart" aria-hidden="true" (click)="goTo('carrito')">{{total}}</i>
+        </div>
+    </div>
+
+
+</div>

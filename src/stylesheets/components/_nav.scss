@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $nav-height;
+  z-index: 100;
+  background-color: silver;
+
+  #nav-desktop,
+  #nav-controls,
+  #nav-controls-upper,
+  #nav-controls-lower {
+    display: flex;
+    width: 100%;
+  }
+
+  #nav-desktop,
+  #nav-controls-upper,
+  #nav-controls-lower {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #nav-controls {
+    flex-direction: column;
+  }
+
+  .nav-usuario-menu-hover {
+    //visibility: visible !important;
+  }
+
+  #nav-usuario-menu {
+    //visibility: collapse;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    @include shadow(1, black);
+  }
+
+  #nav-logo{
+    img{
+      height: 50px;
+    }
+  }
+  #nav-cart{
+
+  }
+
+}

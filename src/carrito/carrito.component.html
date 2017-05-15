@@ -1,0 +1,59 @@
+<h1>Carrito</h1>
+<div id="carrito-main">
+    <div id="carrito-items">
+        <div id="carrito-item" *ngFor="let item of items">
+            <img src="" alt="">
+            <span class="carrito-item-nombre">{{item.nombre}}</span>
+            <input type="number" step="1" [(ngModel)]="item.cantidad" (change)="carritoService.updateCarrito(item)">
+            <span class="carrito-item-total">{{item.cantidad * item.precios[0].precio}}</span>
+            <i class="fa fa-trash" aria-hidden="true" (click)="carritoService.removeFromCarrito(item)"></i>
+        </div>
+    </div>
+    <div id="carrito-detalle">
+        <select name="" id="tipo" [(ngModel)]="tipoEnvio">
+            <option *ngFor="let item of tipoEnvios" [value]="item.id">
+                {{item.name}}
+            </option>
+        </select>
+        <select *ngIf="tipoEnvio== 1" name="" id="envio" [(ngModel)]="lugarEnvio">
+            <option *ngFor="let item of provincias" [value]="item.id">
+                {{item.name}}
+            </option>
+        </select>
+        <select *ngIf="tipoEnvio== 2" id="retira"
+                [ngClass]="{'select-sucursales' : id == 2}"
+                [(ngModel)]="sucursal"
+                class="form-control control-select">
+            <option *ngFor="let item of sucursales" [value]="item.sucursal_id">
+                {{item.nombre}}
+            </option>
+        </select>
+
+        <form [formGroup]="formUsuarios"
+              *ngIf="tipoEnvio== 1 && (user.calle == '' || user.calle == undefined || user.calle == null)" novalidate>
+            <div class="form-line">
+                <div class="form-group">
+                    <label for="">Calle</label>
+                    <input type="text" class="form-control" formControlName="calle">
+                    <small class="text-danger">
+                        {{usuarios.formErrors['calle']}}
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="">Número</label>
+                    <input type="text" class="form-control" formControlName="nro">
+                    <small class="text-danger">
+                        {{usuarios.formErrors['nro']}}
+                    </small>
+                </div>
+            </div>
+        </form>
+
+        <div>
+            <span>Total:</span>
+            <span>{{total}}</span>
+        </div>
+        <button (click)="confirmar()">Pedir</button>
+
+    </div>
+</div>

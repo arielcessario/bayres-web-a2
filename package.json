@@ -1,0 +1,57 @@
+{
+  "name": "BayresWeb",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" \"npm run html:watch\" ",
+    "start:c": "tsc && concurrently \"tsc -w\" \"npm run html:watch\" ",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "build": "rimraf dist && webpack --config webpack.prod.js --progress --profile --bail --display-error-details",
+    "FIXFIX": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "html": "cpx \"src/**/*.{html,png,jpg}\" \"dist/\" ",
+    "html:watch": "onchange \"src/**/*.html\" -v -- npm run html"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "@angular/animations": "^4.0.3",
+    "@angular/common": "~4.0.3",
+    "@angular/compiler": "~4.0.3",
+    "@angular/core": "~4.0.3",
+    "@angular/forms": "~4.0.3",
+    "@angular/http": "~4.0.3",
+    "@angular/platform-browser": "~4.0.3",
+    "@angular/platform-browser-dynamic": "~4.0.3",
+    "@angular/router": "~4.0.3",
+    "@angular/upgrade": "~4.0.3",
+    "angular-in-memory-web-api": "~0.1.13",
+    "angularfire2": "^4.0.0-rc.0",
+    "core-js": "^2.4.1",
+    "firebase": "^3.6.6",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.1",
+    "systemjs": "0.19.39",
+    "traceur": "0.0.96",
+    "zone.js": "^0.8.10"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.45",
+    "angular2-template-loader": "^0.4.0",
+    "awesome-typescript-loader": "^3.0.1",
+    "concurrently": "^3.0.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.10",
+    "webpack": "^2.5.0",
+    "url-loader": "^0.5.8",
+    "file-loader": "^0.11.1",
+    "webpack-merge": "^4.0.0"
+  }
+}

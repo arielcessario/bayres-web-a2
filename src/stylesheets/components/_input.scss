@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+input {
+  @include border-radius-separate(4px, 4px, 4px, 4px);
+  border: 1px solid cornflowerblue;
+  padding: 3px;
+  outline: none;
+  @include transition($fast-transition-time, ease-in);
+  &:focus {
+    @include shadow(2, cornflowerblue);
+    border: 1px solid cornflowerblue;
+
+  }
+}

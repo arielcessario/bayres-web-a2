@@ -1,0 +1,105 @@
+
+producto-component,
+producto-list-component,
+producto-detalle-component {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: $nav-height;
+}
+
+producto-detalle-component {
+  #producto-detalle-main {
+    max-width: $max-width;
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: row;
+
+    #producto-detalle-text{
+      max-width: 50%;
+    }
+
+
+
+    #producto-detalle-images {
+
+      width: 50%;
+      height: 100%;
+      max-height: 400px;
+      min-height: 350px;
+      border: 2px solid red;
+      position: relative;
+      #slider-01,
+      #slider-02,
+      #slider-03,
+      #slider-04 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        //resize: both;
+        overflow: hidden;
+
+      }
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        //object-position: 100% 100%;
+      }
+
+      .slider-nav-selected {
+        background-color: rgba(255, 255, 255, 1) !important;
+      }
+
+      #producto-detalle-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 101;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.4);
+
+        #producto-detalle-social {
+          i {
+            color: white;
+          }
+
+          @for $i from 0 through 4 {
+            i:nth-child(#{$i}) {
+              right: #{($i - 1) * 40}px;
+            }
+          }
+
+        }
+
+        #producto-detalle-nav {
+          bottom: 10px;
+          left: 0;
+          right: 0;
+          width: 30%;
+          height: 30px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          max-width: 30%;
+          div {
+            margin: 5px;
+            height: 20px;
+            width: 20px;
+            border: 1px solid white;
+            background-color: rgba(255, 255, 255, 0);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

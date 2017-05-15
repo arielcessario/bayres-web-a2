@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+nav-component {
+  .nav-container,
+  .nav-buttons-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-buttons-container{
+
+  }
+
+  .nav-button{
+    margin: 5px;
+  }
+
+}

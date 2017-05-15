@@ -1,0 +1,89 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+slider-component {
+  position: relative;
+  top: $nav-height;
+  height: 400px;
+  #slider-container{
+    height: 400px;
+    position: relative;
+  }
+
+  #slider-nav {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    div {
+      margin: 5px;
+      height: 30px;
+      width: 30px;
+      border: 1px solid white;
+      background-color: rgba(255, 255, 255, 0);
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+    }
+    .slider-nav-selected {
+      background-color: rgba(255, 255, 255, 1) !important;
+    }
+  }
+
+  #slider-container {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+  }
+
+  #slider-carrousel {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    border: 2px solid red;
+    position: relative;
+    #slider-01,
+    #slider-02,
+    #slider-03,
+    #slider-04 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      //resize: both;
+      overflow: hidden;
+
+    }
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      //object-position: 100% 100%;
+    }
+    .slider-descr {
+      position: absolute;
+      top: 20%;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      span {
+        font-weight: bold;
+        font-size: 16px;
+        max-width: 300px;
+      }
+      button {
+        background-color: #006837;
+        color: white;
+      }
+    }
+
+  }
+
+}

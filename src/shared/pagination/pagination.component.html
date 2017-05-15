@@ -1,0 +1,7 @@
+<div class="pagination-container">
+    <button (click)="prev()">Prev</button>
+    <input [formControl]="pageNav" type="text">
+    <span> of {{pages}}</span>
+    <!--<span>{{page}} of {{pages}}</span>-->
+    <button (click)="next()">Next</button>
+</div>

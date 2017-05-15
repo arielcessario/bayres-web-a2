@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+pagination-component {
+  .pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    input{
+      width: 50px;
+      margin: 5px;
+    }
+    button{
+      margin: 5px;
+      background-color: cadetblue;
+      color: white;
+      @include transition($fast-transition-time, ease-out);
+      @include border-radius-separate(2px, 2px, 2px, 2px);
+      &:hover{
+        @include shadow(2, black);
+      }
+    }
+
+    span{
+      margin: 5px;
+    }
+  }
+}
